@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap');
+
+:root {
+    --primary-color: #005A9C; 
+    --secondary-color: #00B4D8; 
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --bg-light: #F4F7F6; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Navigation & Header --- */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-light);
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* --- Main Content Area --- */
+main {
+    flex: 1;
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0; 
+    transform: translateY(20px); 
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Updated Hero Section with Background Image --- */
+.hero {
+    text-align: center;
+    padding: 8rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background-image: linear-gradient(rgba(0, 90, 156, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light); 
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: var(--text-light); 
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+}
+
+/* --- Buttons --- */
+button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.4); 
+}
+
+/* --- Typography & Spacing --- */
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+section p, section ul {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+section ul {
+    list-style-type: none;
+}
+
+section ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- Contact Icons Styling --- */
+.contact-list i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* --- Photo Gallery Grid --- */
+.gallery {
+    margin-top: 4rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Testimonial Cards --- */
+.review {
+    background: white;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    border-left: 6px solid var(--secondary-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+    transform: translateX(10px); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Contact Form Styles --- */
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 1rem;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(0, 180, 216, 0.3);
+}
+
+.contact-form button {
+    width: 100%; 
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #1A1A1A;
+    color: #AAAAAA;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
